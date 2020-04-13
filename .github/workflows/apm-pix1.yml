@@ -21,7 +21,7 @@ jobs:
       run: |
         git submodule update --init --recursive
         sudo chmod a+x Tools/environment_install/install-prereqs-ubuntu.sh
-        sudo bash Tools/environment_install/install-prereqs-ubuntu.sh -y
+        bash Tools/environment_install/install-prereqs-ubuntu.sh -y
     - name: build
       run: |
         ./waf configure --board px4-v2
