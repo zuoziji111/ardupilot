@@ -13,16 +13,16 @@ jobs:
     - name: requirment
       env:
           DEBIAN_FRONTEND: noninteractive
-      run: 
+      run: |
         sudo -E apt-get install git -y
         sudo -E apt-get install gitk git-gui -y
     - name: initial
-      run: 
+      run: |
         git submodule update --init --recursive
         sudo chmod a+x Tools/scripts/install-prereqs-ubuntu.sh
         sudo bash Tools/scripts/install-prereqs-ubuntu.sh -y
     - name: build
-      run: 
+      run: |
         ./waf configure --board px4-v2
         ./waf rover
     - name : Upload artifact
