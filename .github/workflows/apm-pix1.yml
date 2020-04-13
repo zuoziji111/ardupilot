@@ -12,13 +12,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: requirment
       run: 
-        apt-get install git
-        apt-get install gitk git-gui
+        sudo apt-get install git
+        sudo apt-get install gitk git-gui
     - name: initial
       run: 
         git submodule update --init --recursive
-        chmod a+x Tools/scripts/install-prereqs-ubuntu.sh
-        bash Tools/scripts/install-prereqs-ubuntu.sh -y
+        sudo chmod a+x Tools/scripts/install-prereqs-ubuntu.sh
+        sudo bash Tools/scripts/install-prereqs-ubuntu.sh -y
     - name: build
       run: 
         ./waf configure --board px4-v2
