@@ -24,7 +24,7 @@ jobs:
         bash Tools/environment_install/install-prereqs-ubuntu.sh -y
     - name: build
       run: |
-        ./waf configure --board px4-v2
+        ./waf configure --board Pixhawk1
         ./waf rover
     - name : Upload artifact
       uses: actions/upload-artifact@master
