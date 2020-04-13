@@ -22,9 +22,9 @@ jobs:
         git submodule update --init --recursive
         sudo chmod a+x Tools/environment_install/install-prereqs-ubuntu.sh
         bash Tools/environment_install/install-prereqs-ubuntu.sh -y
-        cat /home/runner/.profile
-        cat /home/runner/.bashrc
-        source /home/runner/.bashrc
+        cat ~/.profile
+        cat ~/.bashrc
+        source ~/.bashrc
     - name: build
       run: |
         ./waf configure --board Pixhawk1
