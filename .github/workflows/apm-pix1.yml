@@ -11,9 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: requirment
+      env:
+          DEBIAN_FRONTEND: noninteractive
       run: 
-        sudo apt-get install git
-        sudo apt-get install gitk git-gui
+        sudo -E apt-get install git -y
+        sudo -E apt-get install gitk git-gui -y
     - name: initial
       run: 
         git submodule update --init --recursive
